@@ -1,5 +1,8 @@
+// import form from './index.html';
 const express =require( 'express');
 var app =express();
+var mongoose = require('mongoose')
+
 
 //Route 
 app.get('/', function(req,res){
@@ -7,7 +10,7 @@ app.get('/', function(req,res){
 })
 
 //MongoDB connection 
-mongoose.connect( 'mongodb: //localhost/test ',{
+mongoose.connect( 'mongodb://localhost/test ',{
     UseNewUrlParser: true
 
 } );
@@ -19,6 +22,14 @@ mongoose.connection.once('open', function(){
 })
 
 //Server 
- app.listen(4000, function(){
-     console.log('Server is started')
- })
+app.listen(4000, function(){
+    console.log('Server is started')
+})
+
+
+
+
+
+const router = require('./routes/student')
+
+app.use('/student', router)

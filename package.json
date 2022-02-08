@@ -12,7 +12,12 @@
   "license": "ISC",
   "dependencies": {
     "body-parse": "^0.1.0",
+    "body-parser": "^1.19.1",
     "express": "^4.17.2",
-    "mongoose": "^6.2.0"
+    "mongoose": "^6.2.0",
+    "touch-for-windows": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
