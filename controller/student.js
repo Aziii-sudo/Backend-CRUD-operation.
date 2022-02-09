@@ -28,6 +28,15 @@ function view (req,res,next){
         res.send(data)
     })
 }
+function update(req,res,next){
+    Std.findByIdAndUpdate(req.params.id,req.body, (err,std)=>{
+        if(err) {
+            return res.status(500).send({error: "problem with Updating the students records"})
+        };
+        res.send({sucess: "Updated your details"})
+    })
+}
 
 module.exports.create = create
 module.exports.view = view 
+module.exports.update = update

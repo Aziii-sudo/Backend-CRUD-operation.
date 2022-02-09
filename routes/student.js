@@ -2,6 +2,7 @@ const express =require('express')
 var router = express()
 const create = require('../controller/student')
 const view =require ('../controller/student')
+const update =require ('../controller/student')
 const bodyparser = require('body-parser');
 
 
@@ -10,7 +11,7 @@ const bodyparser = require('body-parser');
 router.use(bodyparser.json())
 router.post('/create',create.create)
 router.get('/',view.view)
-// router.patch('')
+router.patch('/:id',update.update)
 
 module.exports = router
 
