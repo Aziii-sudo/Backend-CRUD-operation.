@@ -32,4 +32,4 @@ app.listen(4000, function(){
 
 const router = require('./routes/student')
 
-app.use('/student', router)
+app.use('/Std', router)

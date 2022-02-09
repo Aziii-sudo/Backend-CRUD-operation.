@@ -1,4 +1,4 @@
-const Std = require ('../models/student.js');
+const Std = require ('../models/student');
 const mongoose = require('mongoose');
 
 
@@ -23,4 +23,11 @@ function create(req,res,next){
     })
 }
 
-module.exports.create =create
+function view (req,res,next){
+    Std.find({}).then((data)=>{
+        res.send(data)
+    })
+}
+
+module.exports.create = create
+module.exports.view = view 
